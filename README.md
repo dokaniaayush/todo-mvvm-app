@@ -20,13 +20,13 @@ A task management app built using **Kotlin**, **XML (UI)**, **Room DB**, and **J
 ## 📸 Screenshots
 
 ### 🏠 Home Screen
-![Home Screen](assets/home.jpeg)
+<img src="assets/home.jpeg" alt="Home Screen" width="300"/>
 
 ### ➕ Add Task Screen
-![Add Task](assets/add_task.jpeg)
+<img src="assets/add_task.jpeg" alt="Add Task Screen" width="300"/>
 
 ### ✏️ Update Task Screen
-![Add Task](assets/update_task.jpeg)
+<img src="assets/update_task.jpeg" alt="Update Task Screen" width="300"/>
 
 ### ❌ Sort or Delete All Task Screen
-![Add Task](assets/sort_task.jpeg)
+<img src="assets/sort_task.jpeg" alt="Sort/Delete Task Screen" width="300"/>
