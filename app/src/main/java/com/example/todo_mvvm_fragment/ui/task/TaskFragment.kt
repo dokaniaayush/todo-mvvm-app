@@ -1,21 +1,16 @@
 package com.example.todo_mvvm_fragment.ui.task
 
-import android.app.ProgressDialog.show
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
-import android.view.ViewManager
 import androidx.appcompat.app.AlertDialog
-import androidx.compose.material3.Snackbar
-import androidx.core.view.accessibility.AccessibilityEventCompat.setAction
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModel
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
@@ -23,7 +18,6 @@ import com.example.todo_mvvm_fragment.R
 import com.example.todo_mvvm_fragment.databinding.FragmentTaskBinding
 import com.example.todo_mvvm_fragment.viewmodel.TaskViewModel
 import com.google.android.material.snackbar.Snackbar
-import com.google.android.material.snackbar.Snackbar.make
 
 class TaskFragment : Fragment() {
     private val viewModel: TaskViewModel by viewModels()
@@ -32,7 +26,7 @@ class TaskFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         val binding = FragmentTaskBinding.inflate(inflater)
 
         binding.lifecycleOwner = this
@@ -82,11 +76,13 @@ class TaskFragment : Fragment() {
         return binding.root
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
         inflater.inflate(R.menu.task_menu, menu)
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId) {
             R.id.action_delete_all -> deleteAllItem()

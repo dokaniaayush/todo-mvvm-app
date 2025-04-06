@@ -1,10 +1,8 @@
 package com.example.todo_mvvm_fragment.util
 
-import android.widget.TextView
 import android.graphics.Color
-import androidx.cardview.widget.CardView
+import android.widget.TextView
 import androidx.databinding.BindingAdapter
-import com.example.todo_mvvm_fragment.R
 import java.text.DateFormat
 
 @BindingAdapter("setPriority")

@@ -8,11 +8,8 @@ import com.example.todo_mvvm_fragment.database.TaskEntry
 import com.example.todo_mvvm_fragment.repository.TaskRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
 class TaskViewModel(application: Application) : AndroidViewModel(application) {
-
-//    private val taskDao = TaskDatabase.getDatabase(application).taskDao()
     private val repository: TaskRepository
 
     val getAllTasks: LiveData<List<TaskEntry>>
@@ -27,6 +24,7 @@ class TaskViewModel(application: Application) : AndroidViewModel(application) {
     fun insertTask(taskEntry: TaskEntry){
         viewModelScope.launch(Dispatchers.IO){
             repository.insertTask(taskEntry)
+
         }
     }
 

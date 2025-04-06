@@ -2,19 +2,18 @@ package com.example.todo_mvvm_fragment.ui.add
 
 import android.os.Bundle
 import android.text.TextUtils
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.todo_mvvm_fragment.R
 import com.example.todo_mvvm_fragment.database.TaskEntry
 import com.example.todo_mvvm_fragment.databinding.FragmentAddBinding
 import com.example.todo_mvvm_fragment.viewmodel.TaskViewModel
-
 
 class AddFragment : Fragment() {
 
@@ -23,8 +22,8 @@ class AddFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        val binding = FragmentAddBinding.inflate(inflater)
+    ): View {
+        val binding = FragmentAddBinding.inflate(inflater, container, false)
         val myAdapter = ArrayAdapter<String>(
             requireActivity(),
             android.R.layout.simple_spinner_dropdown_item,
@@ -37,12 +36,12 @@ class AddFragment : Fragment() {
                     Toast.makeText(requireContext(), "It's Empty!", Toast.LENGTH_SHORT).show()
                     return@setOnClickListener
                 }
-                val title_str = edtTask.text.toString()
+                val titleString = edtTask.text.toString()
                 val priority = spinner.selectedItemPosition
 
                 val taskEntry = TaskEntry(
                     0,
-                    title_str,
+                    titleString,
                     priority,
                     System.currentTimeMillis()
                 )

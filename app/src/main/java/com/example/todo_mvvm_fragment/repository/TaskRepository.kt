@@ -2,7 +2,6 @@ package com.example.todo_mvvm_fragment.repository
 
 import android.app.Application
 import androidx.lifecycle.LiveData
-import com.example.todo_mvvm_fragment.database.TaskDao
 import com.example.todo_mvvm_fragment.database.TaskDatabase
 import com.example.todo_mvvm_fragment.database.TaskEntry
 
